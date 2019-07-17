@@ -7,5 +7,15 @@
 }
 
 h2, p, label {
-  text-align: left !important;
+  text-align: left;
+}
+
+label {
+  float: left;
+  font-weight: normal;
+}
+
+.container {
+  margin-left: 0px;
+  padding-left: 0px;
 }

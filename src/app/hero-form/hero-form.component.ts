@@ -8,22 +8,16 @@ import { Hero } from '../hero';
 })
 
 export class HeroFormComponent  {
-
   powers = [ 'Really Smart', 'Walks through walls', 'invisibility'];
-  @Output() newHero = new EventEmitter();
 
+  @Output() newHero = new EventEmitter();
+  hero = new Hero('Superhero name', 'Human name', this.powers[0], 'http://localhost:4200/assets/superhero.png');
 
   constructor() { }
 
-  model = new Hero('Superhero name', 'Human name', this.powers[0], 'http://localhost:4200/assets/superhero.png');
-
   onSubmit() {
-    console.log('submit pressed');
-    this.newHero.emit( this.model );
-    this.model = new Hero('Superhero name', 'Human name', this.powers[0], 'http://localhost:4200/assets/superhero.png');
+    // console.log('submit pressed');
+    this.newHero.emit( this.hero );
+    this.hero = new Hero('Superhero name', 'Human name', this.powers[0], 'http://localhost:4200/assets/superhero.png');
   }
-
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
-
 }

@@ -12,7 +12,8 @@ export class HeroListComponent implements OnInit {
 
   constructor() {
 
-    this.heroes[0] = new Hero('Environmentalist', 'Greta Thurnberg', 'Global environmental activism', 'https://tinyurl.com/greta-t-pic');
+    this.heroes[0] = new Hero('Environmentalist', 'Greta Thurnberg', 'Inspiring g' +
+      'lobal environmental activism', 'https://tinyurl.com/greta-t-pic');
     //this.heroes[1] = new Hero('Steeple Climber', 'Fred Dibnah', 'Bodger', 'https://tinyurl.com/dibnah-pic');
     this.heroes[1] = new Hero('Lightning', 'Ursain Bolt', 'Really fast, victory pose', 'https://tinyurl.com/ursain-pic');
   }
@@ -20,10 +21,10 @@ export class HeroListComponent implements OnInit {
   ngOnInit() {
   }
 
-  addHero(event : any) {
-    console.log('in addHero');
-    console.log(event);
-    this.heroes.push(event);
+  addHero(hero : Hero) {
+    //console.log('in addHero');
+    //console.log(hero);
+    this.heroes.push(hero);
   }
 
 }
