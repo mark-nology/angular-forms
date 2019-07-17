@@ -1,0 +1,14 @@
+.hero-pic {
+  height: 100px;
+  float: left;
+}
+
+.hero-text {
+  position: absolute;
+  left: 300px;
+  text-align: left ;
+}
+
+.hero-box {
+  height: 120px;
+}

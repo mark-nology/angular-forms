@@ -1,0 +1,4 @@
+<ng-container *ngFor="let hero of heroes" >
+  <app-hero [hero]="hero"></app-hero>
+</ng-container>
+<app-hero-form (newHero)='addHero($event)'></app-hero-form>
