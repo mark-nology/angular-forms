@@ -10,14 +10,15 @@ import { Hero } from '../hero';
 export class HeroFormComponent  {
   powers = [ 'Really Smart', 'Walks through walls', 'invisibility'];
 
-  @Output() newHero = new EventEmitter();
   hero = new Hero('Superhero name', 'Human name', this.powers[0], 'http://localhost:4200/assets/superhero.png');
 
   constructor() { }
 
   onSubmit() {
-    // console.log('submit pressed');
     this.newHero.emit( this.hero );
     this.hero = new Hero('Superhero name', 'Human name', this.powers[0], 'http://localhost:4200/assets/superhero.png');
   }
+
+  @Output() newHero = new EventEmitter();
+
 }
