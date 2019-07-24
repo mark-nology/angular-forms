@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Hero} from '../hero';
-import { HeroService } from '../hero.service';
+import {HeroService} from '../hero.service';
 
 @Component({
   selector: 'app-hero-list',
@@ -8,9 +8,7 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-list.component.css']
 })
 export class HeroListComponent implements OnInit {
-
   heroes: Hero[];
-
 
   constructor(private heroService: HeroService) {
   }
@@ -20,12 +18,19 @@ export class HeroListComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe(data => {this.heroes = data;} )
-
-
+    this.heroService.getHeroes().subscribe(data => {
+      this.heroes = data;
+    })
   }
 
-  addHero(hero : Hero) {
+  // not used atm, but tested to work
+  getHero(index: number): void {
+    this.heroService.getHero(index).subscribe(data => {
+      this.heroes = [data];
+    })
+  }
+
+  addHero(hero: Hero) {
     this.heroes.push(hero);
   }
 
