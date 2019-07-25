@@ -26,11 +26,19 @@ export class HeroListComponent implements OnInit {
   // not used atm, but tested to work
   getHero(index: number): void {
     this.heroService.getHero(index).subscribe(data => {
-      this.heroes = [data];
+      this.heroes = [data]; //will remove array
     })
   }
 
-  addHero(hero: Hero) {
+  // in development
+  postHero(): void {
+    this.heroService.postHero(new Hero('markie', 'mvh', 'dev', 'urlthing'))
+      .subscribe(()=> { // what might post return, depends on server choices likely
+        console.log('yay post');
+      })
+  }
+
+  addHero(hero: Hero) {   // will need a post in here
     this.heroes.push(hero);
   }
 
