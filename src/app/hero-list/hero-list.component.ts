@@ -31,14 +31,15 @@ export class HeroListComponent implements OnInit {
   }
 
   // in development
-  postHero(): void {
-    this.heroService.postHero(new Hero('markie', 'mvh', 'dev', 'urlthing'))
+  postHero(hero): void {
+    this.heroService.postHero(hero)
       .subscribe(()=> { // what might post return, depends on server choices likely
         console.log('yay post');
       })
   }
 
   addHero(hero: Hero) {   // will need a post in here
+    this.postHero(hero);
     this.heroes.push(hero);
   }
 
