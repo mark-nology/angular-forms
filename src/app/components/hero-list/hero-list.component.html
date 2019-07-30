@@ -1,4 +1,5 @@
 <ng-container *ngFor="let hero of heroes" >
   <app-hero  [hero]="hero"></app-hero>  <!-- could move ngFor to this line and lose enclosing ngContainer -->
 </ng-container>
-<app-hero-form (newHero)='addHero($event)'></app-hero-form>
+<a class="route-link" routerLink="/hero-form">Create a hero</a>
+
